@@ -1,0 +1,61 @@
+{
+  "name": "souvenir",
+  "version": "1.0.0",
+  "description": "Souvenir is a dedicated platform to enhance the experience of memory creation and collection by providing cloud storage and tons of memory experience features.",
+  "main": "server.js",
+  "scripts": {
+    "start": "bash -c 'test -f goauth-client-secret.js && node -e \"const config = require('./goauth-client-secret.js'); if (config && config.client_id && config.client_secret) { console.log('Google OAuth secret Config file is valid.'); } else { console.error('Invalid Google OAuth secret config file structure.'); process.exit(1); }\" && nodemon server.js || echo \"Google OAuth secret config file not found or invalid structure\"'",
+    "check-env": "bash -c './check_env.sh'",
+    "dev": "npm run check-env && nodemon server.js",
+    "lint": "eslint ./ --ext .js",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "souvenir",
+    "friends",
+    "family",
+    "groups",
+    "travel",
+    "functions",
+    "memory",
+    "pictures",
+    "videos",
+    "storage",
+    "for",
+    "pictures",
+    "and",
+    "videos"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sherlvick/souvenir.git",
+    "directory": "sherlvick/souvenir"
+  },
+  "author": "Aman kumar",
+  "license": "ISC",
+  "dependencies": {
+    "connect-mongo": "^5.0.0",
+    "connect-mongodb-session": "^3.1.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.2.0",
+    "passport": "^0.6.0",
+    "passport-google-oauth": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8"
+  }
+}
